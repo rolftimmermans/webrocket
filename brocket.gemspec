@@ -17,6 +17,8 @@ Gem::Specification.new do |s|
   s.files = [
     "Rakefile",
     "VERSION",
+    "bin/wrb",
+    "brocket.gemspec",
     "js/brocket.js",
     "js/src/brocket.coffee",
     "js/src/brocket.js",
@@ -34,6 +36,7 @@ Gem::Specification.new do |s|
     "lib/brocket/tcp_socket/socket.rb",
     "lib/brocket/web_socket/connection.rb",
     "lib/brocket/web_socket/server.rb",
+    "lib/brocket/wrb.rb",
     "prompt/index.html",
     "prompt/userInputIcon.png",
     "prompt/userInputPreviousIcon.png"
