@@ -1,3 +1,6 @@
 #!/usr/bin/env ruby
 
 require "brocket/wrb"
+
+puts "Starting WRB v0.1. Go to http://localhost:9003/"
+Brocket::Server.new(WRB).start

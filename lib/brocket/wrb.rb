@@ -26,5 +26,3 @@ class WRB
     (@scope.send :_=, @binding.eval(source, "(ruby)")).inspect
   end
 end
-
-Brocket::Server.new(WRB).start

@@ -2,8 +2,6 @@ module Brocket
   module Connection
     def connected
       super
-      p server.sockets
-      p "connected"
       @dispatcher = server.create_dispatcher
     end
 
@@ -12,12 +10,9 @@ module Brocket
       send_message encode_response(response)
     end
 
-    def closed
-      p "closed"
-      super
-      # This will be necessary once connections will be reused.
-      # @dispatcher = nil
-    end
+    # def closed
+    #   super
+    # end
 
     private
 

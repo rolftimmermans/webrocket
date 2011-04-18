@@ -8,7 +8,7 @@ module Brocket
       def connected
         super
         @established = false
-        @handshake = OpeningHandshake::Server.new(:url => "ws://localhost:9999/")
+        @handshake = OpeningHandshake::Server.new(:url => "ws://localhost:9003/")
         @frame = Frame.new
       end
 

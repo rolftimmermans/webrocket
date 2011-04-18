@@ -2,7 +2,7 @@ class Console
   constructor: (element) ->
     document.addEventListener "DOMContentLoaded", =>
       @element = if element? then document.getElementById(element) else document.body
-      @service = Brocket.connect("ws://localhost:9999")
+      @service = Brocket.connect("ws://localhost:9003")
       @createConsole()
     , false
 
@@ -90,7 +90,7 @@ class Console
         if @service.connected()
           @appendError(message, "Reconnected, your session may be lost.")
         else
-          @appendError(message, "Connection lost.")
+          @appendError(message, "Could not connect.")
 
     if command == "?"
       @appendResult(message, ["WRB v0.1. Copyright 2010-#{new Date().getFullYear()} Rolf Timmermans.", "",

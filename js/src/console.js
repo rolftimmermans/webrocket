@@ -5,7 +5,7 @@
     function Console(element) {
       document.addEventListener("DOMContentLoaded", __bind(function() {
         this.element = element != null ? document.getElementById(element) : document.body;
-        this.service = Brocket.connect("ws://localhost:9999");
+        this.service = Brocket.connect("ws://localhost:9003");
         return this.createConsole();
       }, this), false);
     }
@@ -116,7 +116,7 @@
           if (this.service.connected()) {
             return this.appendError(message, "Reconnected, your session may be lost.");
           } else {
-            return this.appendError(message, "Connection lost.");
+            return this.appendError(message, "Could not connect.");
           }
         }, this));
       }

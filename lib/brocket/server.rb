@@ -8,7 +8,7 @@ module Brocket
     attr_reader :front
 
     def initialize(front)
-      super("127.0.0.1", 9999)
+      super("127.0.0.1", 9003)
       @front = front
     end
 
