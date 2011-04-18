@@ -1,6 +1,6 @@
 require "brocket/server"
 
-class Eval
+class WRB
   def initialize
     # Create a new, anonymous, fake "main" object, with global static scope.
     @binding, @scope = Object.class_eval <<-RUBY
@@ -27,4 +27,4 @@ class Eval
   end
 end
 
-Brocket::Server.new(Eval).start
+Brocket::Server.new(WRB).start
