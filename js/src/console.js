@@ -5,7 +5,7 @@
     function Console(element) {
       document.addEventListener("DOMContentLoaded", __bind(function() {
         this.element = element != null ? document.getElementById(element) : document.body;
-        this.service = Brocket.connect("ws://localhost:9003");
+        this.service = WebRocket.connect("ws://localhost:9003");
         return this.createConsole();
       }, this), false);
     }

@@ -1,7 +1,7 @@
-require "brocket/tcp_socket/server"
-require "brocket/web_socket/connection"
+require "webrocket/tcp_socket/server"
+require "webrocket/web_socket/connection"
 
-module Brocket
+module WebRocket
   module WebSocket
     class Server < TCPSocket::Server
       protected

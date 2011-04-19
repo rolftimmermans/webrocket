@@ -105,7 +105,7 @@ Service.connect = (endpoint, callback) ->
 
 
 # Export the service.
-window["Brocket"] = Service
+window["WebRocket"] = Service
 Service["connect"] = Service.connect
 Service.prototype["connect"] = Service.prototype.connect
 Service.prototype["close"] = Service.prototype.close

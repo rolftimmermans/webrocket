@@ -1,6 +1,6 @@
 #!/usr/bin/env ruby
 
-require "brocket/wrb"
+require "webrocket/wrb"
 
-puts "Starting WRB v0.1. Go to http://localhost:9003/"
-Brocket::Server.new(WRB).start
+puts "Started WRB v0.1 at http://localhost:9003"
+WebRocket::Server.new(WRB).start

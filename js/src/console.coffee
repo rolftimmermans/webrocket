@@ -2,15 +2,16 @@ class Console
   constructor: (element) ->
     document.addEventListener "DOMContentLoaded", =>
       @element = if element? then document.getElementById(element) else document.body
-      @service = Brocket.connect("ws://localhost:9003")
+      @service = WebRocket.connect("ws://localhost:9003")
       @createConsole()
+      @element.parentElement.addEventListener "click", => @focusPrompt()
     , false
 
   createConsole: ->
     @historySequence = @sequence = 0
     @history = []
-    @element.innerHTML = '<div class="console"><div id="console-messages" class="console-messages"></div>
-      <div class="console-tail"><div id="console-prompt" spellcheck="false" class="source-code console-prompt"></div></div></div>'
+    @element.innerHTML = '<div class="console"><div id="console-messages" class="console-messages"></div>' +
+      '<div class="console-tail"><div id="console-prompt" spellcheck="false" class="source-code console-prompt"></div></div></div>'
     @messages = document.getElementById("console-messages")
     @prompt = document.getElementById("console-prompt")
     @prompt.addEventListener("keypress", ((event) => @onKeyPress(event)), false)
@@ -88,12 +89,12 @@ class Console
     unless @service.connected()
       @service.connect().returned =>
         if @service.connected()
-          @appendError(message, "Reconnected, your session may be lost.")
+          @appendError(message, "Reconnected, your session may be lost")
         else
-          @appendError(message, "Could not connect.")
+          @appendError(message, "Could not connect")
 
     if command == "?"
-      @appendResult(message, ["WRB v0.1. Copyright 2010-#{new Date().getFullYear()} Rolf Timmermans.", "",
+      @appendResult(message, ["WRB v0.1. Copyright 2010-#{new Date().getFullYear()} Rolf Timmermans.",
         "Type any Ruby expression and press [Enter] to evaluate."
         "Press [Esc] to clear the buffer."].join("\n"))
     else
@@ -116,4 +117,5 @@ class Console
     placeholder.appendChild(result)
     window.scrollTo(0, document.body.scrollHeight)
 
-new Console()
+# Export the console.
+window["WRB"] = Console

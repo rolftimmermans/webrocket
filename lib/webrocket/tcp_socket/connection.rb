@@ -1,4 +1,4 @@
-module Brocket
+module WebRocket
   module TCPSocket
     module Connection
       attr_reader :server

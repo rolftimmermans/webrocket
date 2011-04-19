@@ -1,4 +1,4 @@
-module Brocket
+module WebRocket
   module TCPSocket
     module Listener
       def read_event

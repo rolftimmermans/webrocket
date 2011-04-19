@@ -1,4 +1,4 @@
-module Brocket
+module WebRocket
   class Dispatcher
     attr_reader :front
 
@@ -20,6 +20,10 @@ module Brocket
       end
       response[:id] = message[:id]
       response
+    end
+
+    def http_response
+      @front.http_response if @front.respond_to? :http_response
     end
 
     private

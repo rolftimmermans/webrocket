@@ -1,4 +1,4 @@
-module Brocket
+module WebRocket
   module Connection
     def connected
       super
@@ -10,9 +10,14 @@ module Brocket
       send_message encode_response(response)
     end
 
-    # def closed
-    #   super
-    # end
+    def handshake_failed
+      if http_response = @dispatcher.http_response
+        write ["HTTP/1.1 200 OK",
+          "Content-Type: text/html; charset=UTF-8",
+          "Content-Length: #{http_response.length}",
+          "", http_response].join("\r\n")
+      end
+    end
 
     private
 

@@ -1,9 +1,9 @@
-require "brocket/connection"
-require "brocket/dispatcher"
-require "brocket/web_socket/server"
+require "webrocket/connection"
+require "webrocket/dispatcher"
+require "webrocket/web_socket/server"
 require "json"
 
-module Brocket
+module WebRocket
   class Server < WebSocket::Server
     attr_reader :front
 

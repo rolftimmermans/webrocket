@@ -159,7 +159,7 @@
   Service.connect = function(endpoint, callback) {
     return new Service(new Client(endpoint));
   };
-  window["Brocket"] = Service;
+  window["WebRocket"] = Service;
   Service["connect"] = Service.connect;
   Service.prototype["connect"] = Service.prototype.connect;
   Service.prototype["close"] = Service.prototype.close;

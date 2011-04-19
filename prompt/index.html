@@ -1,18 +1,23 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <title>WRB - Ruby Console</title>
     <style type="text/css" media="screen">
       .source-code { font-family: Menlo, monospace; font-size: 12px; line-height: 1.5em; }
       .console-group, .console-tail { margin: 0; padding: 2px 0; }
       .console-group { border-bottom: 1px solid #F0F0F0; }
       .console-command, .console-result, .console-error, .console-prompt { margin: 0; padding: 0 0 0 20px; min-height: 18px; background: no-repeat 4px 4px; outline: none; white-space: pre-wrap; overflow: hidden; text-overflow: ellipsis; }
-      .console-command { color: #0080FF; background-image: url(userInputPreviousIcon.png); }
+      .console-command { color: #0080FF; }
+      .console-command { background-image: url(userInputPreviousIcon.png); }
+      .console-result { color: #1C007F; }
       .console-error { color: red; }
-      .console-prompt { background-image: url(userInputIcon.png); -webkit-user-modify: read-write-plaintext-only; }
+      .console-prompt { -webkit-user-modify: read-write-plaintext-only; }
+      .console-prompt { background-image: url(userInputIcon.png); }
     </style>
-    <script type="text/javascript" src="../js/src/futures.js"></script>
-    <script type="text/javascript" src="../js/src/brocket.js"></script>
-    <script type="text/javascript" src="../js/src/console.js"></script>
+    <script type="text/javascript">
+      {js};
+      new WRB();
+    </script>
   </head>
   <body></body>
 </html>

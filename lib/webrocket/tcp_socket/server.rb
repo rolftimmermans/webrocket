@@ -1,9 +1,9 @@
 require "socket"
-require "brocket/tcp_socket/socket"
-require "brocket/tcp_socket/listener"
-require "brocket/tcp_socket/connection"
+require "webrocket/tcp_socket/socket"
+require "webrocket/tcp_socket/listener"
+require "webrocket/tcp_socket/connection"
 
-module Brocket
+module WebRocket
   module TCPSocket
     class Server
       attr_reader :sockets
