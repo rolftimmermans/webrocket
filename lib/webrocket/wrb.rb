@@ -16,18 +16,21 @@ class WRB
 
     # Create a new, isolated binding in the global static scope.
     @context = TOPLEVEL_BINDING.eval("proc { binding }.call")
-
-    self.last_value = nil
+    @last_value_setter = @context.eval("_ = nil; lambda { |value| _ = value }")
   end
 
   def eval(source)
-    (self.last_value = @context.eval(source, "(wrb)")).inspect
+    eval_and_save(source).inspect
   end
 
   private
 
-  def last_value=(value)
-    @context.eval("_ = ObjectSpace._id2ref(#{value.object_id.inspect})") # FIXME: Giant hack
+  def eval_and_save(source)
+    set_last_value @context.eval(source, "(wrb)")
+  end
+
+  def set_last_value(value)
+    @last_value_setter.call(value)
   end
 
   def retrieve(filename)
