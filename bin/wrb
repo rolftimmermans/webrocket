@@ -3,4 +3,4 @@
 require "webrocket/wrb"
 
 puts "Started WRB v0.1 at http://localhost:9003"
-WebRocket::Server.new(WRB).start
+WebRocket::Server.new(WRB::Session).start
